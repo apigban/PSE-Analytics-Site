@@ -1,0 +1,44 @@
+{% extends 'trading/base.html' %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+{% block bootstrap4_extra_head %}
+<script type="text/javascript" src="/jsi18n/"></script>
+<script type="text/javascript" src="{% static 'admin/js/core.js' %}"></script>
+<script type="text/javascript" src="{% static 'admin/js/admin/RelatedObjectLookups.js' %}"></script>
+
+{# <link rel="stylesheet" type="text/css" href="{% static 'admin/css/forms.css' %}"/> #}
+{# <link rel="stylesheet" type="text/css" href="{% static 'admin/css/base.css' %}"/> #}
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/widgets.css' %}"/>
+
+
+<script type="text/javascript" src="/admin/jsi18n/"></script>
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/calendar.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
+{% endblock bootstrap4_extra_head %}
+
+
+{% block content %}
+
+    <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Looking for a Stock?</legend>
+              <label>
+                  Search for a Stock or Company
+              </label>
+              {{ s_form }}
+          </fieldset>
+
+          <div class="form-group">
+              <button class="btn btn-outline-info" type="submit">Search</button>
+          </div>
+      </form>
+
+{% endblock content %}
+

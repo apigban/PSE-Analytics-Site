@@ -1,0 +1,17 @@
+
+{% extends 'trading/base.html' %}
+{% load render_table from django_tables2 %}
+
+{% block content %}
+
+    <div class="container">
+        <h1 class="title">Market Summaries</h1>
+
+        <h2 class="subtitle">Stocks</h2>
+            {% render_table table %}
+
+    </div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,84 @@
+{% extends 'bulma/base.html' %}
+
+
+{% block header %}
+  <div class="container">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox"
+               width="112" height="28">
+        </a>
+      </div>
+
+      <div id="navMenu" class="navbar-menu">
+        <div class="navbar-start">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link  is-active" href="#">
+              Home
+            </a>
+            <div class="navbar-dropdown ">
+              <a class="navbar-item " href="#">
+                PlaceHolder1
+              </a>
+              <a class="navbar-item " href="#">
+                PlaceHolder2
+              </a>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <div class="navbar-link">
+              Contact Information
+            </div>
+
+            <div id="moreDropdown" class="navbar-dropdown ">
+              <a class="navbar-item" href="#" target="_blank">
+                <span class="icon" style="color: #55acee;">
+                  <i class="fa fa-twitter"></i>
+                </span>
+              About Me
+              </a>
+
+
+            <div id="moreDropdown" class="navbar-dropdown ">
+              <a class="navbar-item" href="https://twitter.com/apigban" target="_blank">
+                <span class="icon" style="color: #55acee;">
+                  <i class="fa fa-twitter"></i>
+                </span>
+              Follow me on Twitter
+              </a>
+
+              <a class="navbar-item" href="https://github.com/apigban" target="_blank">
+                <span class="icon" style="color: #55acee;">
+                  <i class="fa fa-github-alt"></i>
+                </span>
+              Review my code on Github!
+              </a>
+
+              <a class="navbar-item " href="#">
+                <div class="level is-mobile">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <p>
+                        <strong>PlaceHolder1</strong>
+                        <br>
+                        <small>Small PlaceHolder Text</small>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="level-right">
+                    <div class="level-item">
+                    <span class="icon has-text-info">
+                      <i class="fa fa-plug"></i>
+                    </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+{% endblock header %}
