@@ -17,20 +17,27 @@
             <div class="card card-body">
                 <form method="post">
                     {% csrf_token %}
-                    {{ portfolio_name|crispy }}
-                    {{ form_dropdown|crispy }}
-                    <button type="submit" class="btn btn-outline-primary">Create Portfolio</button>
+                    {{ new_portfolio_name|crispy }}
+                    {{ stock_multiselect|crispy }}
+
+                    <button type="submit" class="btn btn-outline-primary" name="createPorfolio">Create Portfolio
+                    </button>
                 </form>
             </div>
         </div>
         <div class="col">
             <div class="collapse multi-collapse" id="multiCollapseExample2">
                 <div class="card card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-      </div>
+                    <form method="post">
+                        {% csrf_token %}
+                        {% for item in porfolio_select %}
+                            {{ item }}
+                        {% endfor %}
+                        <button type="submit" class="btn btn-outline-primary" name="updatePortfolio">Update</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
 {% endblock content %}
 

@@ -1,5 +1,6 @@
 from django import forms
 from .models import Stock, Portfolio
+from users.models import ProfilePortfolioJunction
 from .validators import alphanumeric
 
 
@@ -30,3 +31,18 @@ class StockPicker_name(forms.ModelForm):
         model = Portfolio
         fields = ['folio_name']
 
+
+class PortfolioPicker_select(forms.Form):
+    user_id = None
+    portfolio_list = forms.ModelChoiceField(queryset=ProfilePortfolioJunction.objects.all())
+
+    def __init__(self, *args, **kwargs):
+        self.user_id = kwargs.pop('user_id')
+        super(PortfolioPicker_select, self).__init__(*args, **kwargs)
+
+#    user_id = None
+#    portfolio_list = forms.ModelChoiceField(queryset=ProfilePortfolioJunction.objects.filter(owners_id=user_id).only('folio_id'))
+#    print(portfolio_list.choices., user_id)
+#    def __init__(self, *args, **kwargs):
+#        self.user_id = kwargs.pop('user_id')
+#        super(PortfolioPicker_select, self).__init__(*args, **kwargs)
